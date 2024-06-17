@@ -1,0 +1,14 @@
+read name #чтение из консоли
+echo "$name"
+
+#nohup - процесс записывается в файл (tail nohup.out) и не завершится 
+nohup ./my_script.sh &
+
+#disown - перевести в nohup
+
+sed (stream editor) - утилита для обработки и преобразования текстовых данных
+
+awk - утилита для обработки текстовых данных
+
+#Перехват сигналов
+trap cleanup SIGINT
