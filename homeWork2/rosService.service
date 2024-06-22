@@ -1,0 +1,10 @@
+[Unit]
+Description=ROS Demo Node Auto-start Service
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/bin/bash /home/naumov/Documents/scriptBash/homeWork2/startRos.sh
+
+[Install]
+WantedBy=multi-user.target
