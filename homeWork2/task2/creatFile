@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Настройка параметров
+DIRECTORY="/home/naumov/Documents/scriptBash/homeWork2/task2/bagfiles"
+FILE_SIZE_MB=1000
+FILE_COUNT=300
+
+# Создание файлов
+for i in $(seq 1 $FILE_COUNT); do
+    FILE_NAME="$DIRECTORY/file_$i.bag"
+    echo "Создание файла: $FILE_NAME размером $FILE_SIZE_MB MB"
+    dd if=/dev/urandom of="$FILE_NAME" bs=1M count="$FILE_SIZE_MB"
+done

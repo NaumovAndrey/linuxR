@@ -1,0 +1,15 @@
+#!/bin/bash
+
+DIR="/home/naumov/Documents/scriptBash/homeWork2/task2"
+DAYS_PERIOD=7
+FREE_SPACE_THRESHOLD=20
+DISK="/dev/sdb5"
+
+freeSpace=$(df -h | grep "$DISK" | awk '{ print $5 }' | sed 's/%//g')
+
+if [ "$freeSpace" -le "$FREE_SPACE_THRESHOLD" ]; then
+    echo "Недостаточно свободного места на диске. Удаление файлов старше $DAYS_PERIOD дней."
+    find "$DIR" -name "*.bag" -type f -mtime +"$DAYS_PERIOD" -exec rm -f {} \;
+else
+    echo "Свободного места на диске достаточно."
+fi
