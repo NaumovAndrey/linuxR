@@ -2,7 +2,7 @@
 
 DIR="/home/naumov/Documents/scriptBash/homeWork2/task2"
 DAYS_PERIOD=7
-FREE_SPACE_THRESHOLD=20
+FREE_SPACE_THRESHOLD=95 
 DISK="/dev/sdb5"
 
 freeSpace=$(df -h | grep "$DISK" | awk '{ print $5 }' | sed 's/%//g')
